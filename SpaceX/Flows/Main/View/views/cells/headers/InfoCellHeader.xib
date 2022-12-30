@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InfoCellHeader" customModule="SpaceX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="633" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falcon Heavy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-vr-5R8">
+                    <rect key="frame" x="8" y="52" width="158" height="68"/>
+                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="29"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3l-UE-APW">
+                    <rect key="frame" x="569" y="52" width="56" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Setting"/>
+                    <connections>
+                        <action selector="showSetting:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cq1-9f-njH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S3l-UE-APW" secondAttribute="trailing" constant="8" id="FIs-s3-SIs"/>
+                <constraint firstItem="S3l-UE-APW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BE7-vr-5R8" secondAttribute="trailing" constant="20" id="KYc-nA-O3c"/>
+                <constraint firstItem="BE7-vr-5R8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="QtD-C7-glE"/>
+                <constraint firstItem="S3l-UE-APW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="hFE-fp-Nvi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="S3l-UE-APW" secondAttribute="bottom" constant="8" id="qwM-l6-1kC"/>
+                <constraint firstAttribute="bottom" secondItem="BE7-vr-5R8" secondAttribute="bottom" constant="8" id="u2V-wW-qbC"/>
+                <constraint firstItem="BE7-vr-5R8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="y33-Ch-OPc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nameLabel" destination="BE7-vr-5R8" id="Ug0-Ev-kob"/>
+            </connections>
+            <point key="canvasLocation" x="422.46376811594206" y="271.20535714285711"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Setting" width="32" height="32"/>
+    </resources>
+</document>
