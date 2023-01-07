@@ -21,10 +21,9 @@ class LaunchCell: UICollectionViewCell {
         configUI()
     }
     
-    func config(spaceshipName: String, dateLaunch: String, statusImage: UIImage) {
-        spaceshipNameLabel.text = spaceshipName
-        dateLaunchLabel.text = dateLaunch
-        statusImageLabel.image = statusImage
+    func config(_ model: LaunchCellModel) {
+        spaceshipNameLabel.text = model.spaceshipName
+        dateLaunchLabel.text = model.dateLaunch
     }
     
     func configUI() {

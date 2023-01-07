@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="KRF-WE-5b5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="245.5"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="244"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuK-mJ-mUt" customClass="SpaceshipInfoView" customModule="SpaceX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="269" width="414" height="627"/>
@@ -48,7 +49,7 @@
                         <outlet property="activityIndicator" destination="gWf-nz-hsm" id="RHH-XW-069"/>
                         <outlet property="spaceshipInfoView" destination="WuK-mJ-mUt" id="wYR-Ez-G8h"/>
                         <segue destination="NwM-kg-KdE" kind="show" identifier="SettingSeque" id="Dse-mb-9HB"/>
-                        <segue destination="zKw-Bi-xjK" kind="presentation" identifier="LaunchSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="znj-cZ-Ngo"/>
+                        <segue destination="zKw-Bi-xjK" kind="presentation" identifier="LaunchSegue" modalPresentationStyle="fullScreen" id="cGh-Ho-BZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -218,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kyY-X5-qHL">
-                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="155" width="414" height="741"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KUh-ee-mB9">
                                     <size key="itemSize" width="311" height="100"/>
@@ -268,7 +269,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Falcon Heavy" leftItemsSupplementBackButton="YES" id="ocf-6x-QZe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eHa-So-HcG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -286,7 +287,7 @@
     </scenes>
     <color key="tintColor" red="1" green="0.97584393869999997" blue="0.93302951030000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="space" width="824" height="494"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

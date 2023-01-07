@@ -8,9 +8,28 @@
 import Foundation
 
 protocol LaunchPresenterProtocol {
-    
+    var models: [LaunchCellModel] { get }
+    func loadLaunches()
 }
 
 class LaunchPresenter: LaunchPresenterProtocol {
-    var view: LaunchViewProtocol?
+    weak var view: LaunchViewProtocol?
+    
+    private var service = NetworkService()
+    
+    var models: [LaunchCellModel] = []
+    
+    func loadLaunches() {
+        service.loadLaunchInfo { [weak self] launches in
+            
+            guard let self = self else { return }
+            
+            self.models = launches.compactMap ({ model in
+                return LaunchCellModel(
+                    spaceshipName: model.name ?? "3213",
+                    dateLaunch: model.date ?? "23131")
+                })
+            self.view?.reloadData()
+        }
+    }
 }

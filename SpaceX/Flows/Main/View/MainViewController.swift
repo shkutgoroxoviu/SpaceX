@@ -48,6 +48,15 @@ class MainViewController: UIViewController, MainViewProtocol {
                 self.spaceshipInfoView.reloadData()
             }
         }
+        if segue.identifier == "segueShowNavigation" {
+            if let destVC = segue.destination as? UINavigationController, let targetController = destVC.topViewController as? LaunchViewController {
+                
+            }
+            
+            let presenter = LaunchPresenter()
+            presenter.view = vc
+            vc.presenter = presenter
+        }
     }
 }
 
@@ -57,7 +66,7 @@ extension MainViewController: InfoCellHeaderDelegate, SpaceshipInfoFooterDelegat
     }
     
     func showLaunches() {
-        performSegue(withIdentifier: "LaunchSegue", sender: nil)
+        performSegue(withIdentifier: "segueShowNavigation", sender: nil)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol LaunchViewProtocol: AnyObject {
-    
+    func reloadData()
 }
 
 class LaunchViewController: UIViewController, LaunchViewProtocol {
@@ -21,6 +21,7 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.loadLaunches()
         configUI()
     }
     
@@ -45,16 +46,24 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
         navigationController?.navigationBar.barStyle = .black
     }
     
-    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension LaunchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return presenter?.models.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LaunchCell.reuseId, for: indexPath) as! LaunchCell
+        guard let presenter = presenter?.models[indexPath.row] else { return cell }
+        
+        cell.config(presenter)
+        
         
         return cell
     }

@@ -43,9 +43,10 @@
 		A0473D7429571E6C00EDD7CF /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0473D7229571E6C00EDD7CF /* LaunchCell.xib */; };
 		A0546ED6295734CA007C37F3 /* LaunchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0546ED5295734CA007C37F3 /* LaunchConfigurator.swift */; };
 		A0546EDA29586E93007C37F3 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0546ED929586E93007C37F3 /* LaunchPresenter.swift */; };
-		A0546EDC29586EA2007C37F3 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0546EDB29586EA2007C37F3 /* LaunchModel.swift */; };
+		A0546EDC29586EA2007C37F3 /* LaunchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0546EDB29586EA2007C37F3 /* LaunchCellModel.swift */; };
 		A05CD30328BA610800609360 /* InfoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05CD30228BA610800609360 /* InfoCellHeader.swift */; };
 		A05CD30528BA611300609360 /* InfoCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05CD30428BA611300609360 /* InfoCellHeader.xib */; };
+		A05D50A32965B88300CA3C02 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D50A22965B88300CA3C02 /* Launch.swift */; };
 		A0AD438D2954AC2C00764FAC /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD438C2954AC2C00764FAC /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,9 +89,10 @@
 		A0473D7229571E6C00EDD7CF /* LaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchCell.xib; sourceTree = "<group>"; };
 		A0546ED5295734CA007C37F3 /* LaunchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfigurator.swift; sourceTree = "<group>"; };
 		A0546ED929586E93007C37F3 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
-		A0546EDB29586EA2007C37F3 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
+		A0546EDB29586EA2007C37F3 /* LaunchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellModel.swift; sourceTree = "<group>"; };
 		A05CD30228BA610800609360 /* InfoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellHeader.swift; sourceTree = "<group>"; };
 		A05CD30428BA611300609360 /* InfoCellHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCellHeader.xib; sourceTree = "<group>"; };
+		A05D50A22965B88300CA3C02 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A0AD438C2954AC2C00764FAC /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				9909A97728BCEFD6002CE059 /* Spaceship.swift */,
+				A05D50A22965B88300CA3C02 /* Launch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 		A045764629572C570060F57B /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				A05D50A429671AA300CA3C02 /* Helpers */,
 				A0546ED5295734CA007C37F3 /* LaunchConfigurator.swift */,
 				A0546ED8295734F6007C37F3 /* Presenter */,
 				A0546ED7295734EA007C37F3 /* Model */,
@@ -312,7 +316,7 @@
 		A0546ED7295734EA007C37F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0546EDB29586EA2007C37F3 /* LaunchModel.swift */,
+				A0546EDB29586EA2007C37F3 /* LaunchCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +327,13 @@
 				A0546ED929586E93007C37F3 /* LaunchPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A05D50A429671AA300CA3C02 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A06E5D7D28BA38C20063E1F2 /* tableView */ = {
@@ -456,8 +467,9 @@
 				997A196E28B8009500D38DEB /* AppDelegate.swift in Sources */,
 				A0546ED6295734CA007C37F3 /* LaunchConfigurator.swift in Sources */,
 				9909A9A028BE5FF0002CE059 /* NetworkService.swift in Sources */,
+				A05D50A32965B88300CA3C02 /* Launch.swift in Sources */,
 				A0546EDA29586E93007C37F3 /* LaunchPresenter.swift in Sources */,
-				A0546EDC29586EA2007C37F3 /* LaunchModel.swift in Sources */,
+				A0546EDC29586EA2007C37F3 /* LaunchCellModel.swift in Sources */,
 				997A197028B8009500D38DEB /* SceneDelegate.swift in Sources */,
 				A0AD438D2954AC2C00764FAC /* UserDefaults.swift in Sources */,
 				A045764B29572CF80060F57B /* LaunchViewController.swift in Sources */,
