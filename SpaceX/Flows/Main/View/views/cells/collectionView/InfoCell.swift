@@ -84,6 +84,7 @@ extension InfoCell: UITableViewDataSource, UITableViewDelegate {
         if section == models.count - 1 {
             let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: SpaceshipInfoFooter.reuseId) as! SpaceshipInfoFooter
             footer.delegate = footerDelegate
+            footer.spaceshipName = 
             return footer
         }
         return UITableViewHeaderFooterView()

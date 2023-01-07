@@ -10,4 +10,5 @@ import Foundation
 struct LaunchCellModel {
     let spaceshipName: String
     let dateLaunch: String
+    let success: Bool
 }

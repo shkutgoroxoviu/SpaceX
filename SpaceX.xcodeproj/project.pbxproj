@@ -291,24 +291,24 @@
 				A0546ED8295734F6007C37F3 /* Presenter */,
 				A0546ED7295734EA007C37F3 /* Model */,
 				A045764929572CE00060F57B /* View */,
-				A045764729572C920060F57B /* collectionView */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		A045764729572C920060F57B /* collectionView */ = {
+		A045764729572C920060F57B /* cells */ = {
 			isa = PBXGroup;
 			children = (
 				A0473D7229571E6C00EDD7CF /* LaunchCell.xib */,
 				A0473D7129571E6C00EDD7CF /* LaunchCell.swift */,
 			);
-			path = collectionView;
+			path = cells;
 			sourceTree = "<group>";
 		};
 		A045764929572CE00060F57B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A045764A29572CF80060F57B /* LaunchViewController.swift */,
+				A045764729572C920060F57B /* cells */,
 			);
 			path = View;
 			sourceTree = "<group>";

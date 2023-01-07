@@ -27,8 +27,10 @@ class LaunchPresenter: LaunchPresenterProtocol {
             self.models = launches.compactMap ({ model in
                 return LaunchCellModel(
                     spaceshipName: model.name ?? "3213",
-                    dateLaunch: model.date ?? "23131")
-                })
+                    dateLaunch: model.date ?? "23131",
+                    success: model.success ?? true
+                )
+            })
             self.view?.reloadData()
         }
     }

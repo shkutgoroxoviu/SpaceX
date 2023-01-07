@@ -14,10 +14,10 @@ protocol SpaceshipInfoFooterDelegate {
 
 /// Класс, который отвечает за нижнюю часть таблицы
 class SpaceshipInfoFooter: UITableViewHeaderFooterView {
-    
     static let reuseId = "SpaceshipInfoFooter"
     
     var delegate: SpaceshipInfoFooterDelegate?
+    var spaceshipName: String?
     
     @IBOutlet weak var showLaunchesButton: UIButton!
     

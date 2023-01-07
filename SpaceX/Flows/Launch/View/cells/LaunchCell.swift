@@ -15,6 +15,7 @@ class LaunchCell: UICollectionViewCell {
     @IBOutlet weak var spaceshipNameLabel: UILabel!
     @IBOutlet weak var dateLaunchLabel: UILabel!
     @IBOutlet weak var statusImageLabel: UIImageView!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class LaunchCell: UICollectionViewCell {
     func config(_ model: LaunchCellModel) {
         spaceshipNameLabel.text = model.spaceshipName
         dateLaunchLabel.text = model.dateLaunch
+        statusImageLabel.image = model.success ? UIImage(named: "successfully") : UIImage(named: "failure")
     }
     
     func configUI() {
@@ -31,6 +33,7 @@ class LaunchCell: UICollectionViewCell {
         layer.borderWidth = 5
         layer.borderColor = UIColor.clear.cgColor
         layer.masksToBounds = true
+        widthConstraint.constant = UIScreen.main.bounds.width - 64
     }
 }
 
