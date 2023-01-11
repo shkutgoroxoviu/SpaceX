@@ -9,12 +9,14 @@ import Foundation
 
 protocol MainPresenterProtocol {
     func viewDidLoad()
+    var models: [SpaceshipCellModel] { get set }
 }
 
 final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol?
     private let networkService = NetworkService()
     private let builder = SpaceshipsCellBuilder()
+    var models: [SpaceshipCellModel] = []
     
     func viewDidLoad() {
         loadSpaceships()

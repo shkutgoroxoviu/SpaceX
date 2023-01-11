@@ -34,8 +34,6 @@
 		997A197528B8009500D38DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997A197328B8009500D38DEB /* Main.storyboard */; };
 		997A197728B8009600D38DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997A197628B8009600D38DEB /* Assets.xcassets */; };
 		997A197A28B8009600D38DEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997A197828B8009600D38DEB /* LaunchScreen.storyboard */; };
-		997A198528B8010200D38DEB /* SpaceshipInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997A198428B8010200D38DEB /* SpaceshipInfoView.swift */; };
-		997A198728B8011400D38DEB /* SpaceshipInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997A198628B8011400D38DEB /* SpaceshipInfoView.xib */; };
 		997A199328B8EE4100D38DEB /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997A199128B8EE4100D38DEB /* InfoCell.swift */; };
 		997A199428B8EE4100D38DEB /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997A199228B8EE4100D38DEB /* InfoCell.xib */; };
 		A045764B29572CF80060F57B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045764A29572CF80060F57B /* LaunchViewController.swift */; };
@@ -80,8 +78,6 @@
 		997A197628B8009600D38DEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		997A197928B8009600D38DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		997A197B28B8009600D38DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		997A198428B8010200D38DEB /* SpaceshipInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipInfoView.swift; sourceTree = "<group>"; };
-		997A198628B8011400D38DEB /* SpaceshipInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceshipInfoView.xib; sourceTree = "<group>"; };
 		997A199128B8EE4100D38DEB /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		997A199228B8EE4100D38DEB /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		A045764A29572CF80060F57B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -254,8 +250,6 @@
 		997A198328B800CD00D38DEB /* views */ = {
 			isa = PBXGroup;
 			children = (
-				997A198428B8010200D38DEB /* SpaceshipInfoView.swift */,
-				997A198628B8011400D38DEB /* SpaceshipInfoView.xib */,
 				997A198828B807BD00D38DEB /* cells */,
 			);
 			path = views;
@@ -436,7 +430,6 @@
 				9909A96E28BCD2F8002CE059 /* PropertyCell.xib in Resources */,
 				9909A98D28BD0590002CE059 /* StageHeader.xib in Resources */,
 				997A197A28B8009600D38DEB /* LaunchScreen.storyboard in Resources */,
-				997A198728B8011400D38DEB /* SpaceshipInfoView.xib in Resources */,
 				997A197728B8009600D38DEB /* Assets.xcassets in Resources */,
 				A0473D7429571E6C00EDD7CF /* LaunchCell.xib in Resources */,
 				997A197528B8009500D38DEB /* Main.storyboard in Resources */,
@@ -463,7 +456,6 @@
 				A0473D7329571E6C00EDD7CF /* LaunchCell.swift in Sources */,
 				A05CD30328BA610800609360 /* InfoCellHeader.swift in Sources */,
 				9909A9A628BE66A7002CE059 /* SpaceshipsCellBuilder.swift in Sources */,
-				997A198528B8010200D38DEB /* SpaceshipInfoView.swift in Sources */,
 				997A196E28B8009500D38DEB /* AppDelegate.swift in Sources */,
 				A0546ED6295734CA007C37F3 /* LaunchConfigurator.swift in Sources */,
 				9909A9A028BE5FF0002CE059 /* NetworkService.swift in Sources */,
