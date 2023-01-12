@@ -51,7 +51,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     private func setupXib() {
-        self.view.addSubview(contentView)
+
         contentView.frame = self.view.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
@@ -63,7 +63,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     private func configuUI() {
-        contentView.layer.cornerRadius = 20
+        collectionView.layer.cornerRadius = 20
         
         let nib = UINib(nibName: InfoCell.reuseID, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: InfoCell.reuseID)
@@ -90,11 +90,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     func setupInfoView(with models: [SpaceshipCellModel]) {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async {
             
             self.config(with: models)
-            self.collectionView.delegate = footerDelegate as? any UICollectionViewDelegate
-            self.collectionView.delegate = headerDelegate as? any UICollectionViewDelegate
+            self.headerDelegate = self
+            self.footerDelegate = self
             self.activityIndicator.stopAnimating()
         }
     }
@@ -134,8 +134,8 @@ extension MainViewController: InfoCellHeaderDelegate, SpaceshipInfoFooterDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = contentView.bounds.width - 16
-        let height = contentView.bounds.height - topConstraint.constant - pageControl.bounds.height - 32
+        let width = collectionView.bounds.width - 16
+        let height = collectionView.bounds.height - topConstraint.constant
         return CGSize(width: width, height: height)
     }
     
