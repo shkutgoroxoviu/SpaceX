@@ -9,7 +9,7 @@ import UIKit
 
 //AnyObject для того чтобы можно было в презентере написать weak var view. То есть не получилось бы сделать weak
 protocol MainViewProtocol: AnyObject {
-    func setupInfoView(with models: [SpaceshipCellModel])
+    func reloadData()
 }
 
 class MainViewController: UIViewController, MainViewProtocol {
@@ -18,7 +18,6 @@ class MainViewController: UIViewController, MainViewProtocol {
     var headerDelegate: InfoCellHeaderDelegate?
     var footerDelegate: SpaceshipInfoFooterDelegate?
     
-    @IBOutlet var contentView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -30,7 +29,6 @@ class MainViewController: UIViewController, MainViewProtocol {
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         configuUI()
-        setupXib()
     }
     
     // чтобы статусБар не сливался с фоном
@@ -38,22 +36,12 @@ class MainViewController: UIViewController, MainViewProtocol {
         return .lightContent
     }
     
-    func config(with models: [SpaceshipCellModel]) {
-        self.presenter?.models = models
-        pageControl.numberOfPages = models.count
-        reloadData()
-    }
-    
     func reloadData() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+            self?.pageControl.numberOfPages = self?.presenter?.models.count ?? 1
+            self?.activityIndicator.stopAnimating()
         }
-    }
-    
-    private func setupXib() {
-
-        contentView.frame = self.view.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     @IBAction func touchPageControl(_ sender: Any) {
@@ -87,16 +75,6 @@ class MainViewController: UIViewController, MainViewProtocol {
         guard let visiableIndex = collectionView.indexPathForItem(at: visiablePoint) else { return }
         
         pageControl.currentPage = visiableIndex.row
-    }
-    
-    func setupInfoView(with models: [SpaceshipCellModel]) {
-        DispatchQueue.main.async {
-            
-            self.config(with: models)
-            self.headerDelegate = self
-            self.footerDelegate = self
-            self.activityIndicator.stopAnimating()
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

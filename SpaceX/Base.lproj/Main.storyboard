@@ -21,10 +21,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="KRF-WE-5b5">
                                 <rect key="frame" x="0.0" y="46.999999999999986" width="428" height="253.66666666666663"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="npE-58-gEv">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npE-58-gEv">
                                 <rect key="frame" x="0.0" y="280.33333333333331" width="428" height="592.66666666666674"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kzf-5q-rjf">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kzf-5q-rjf">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -74,7 +74,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="gWf-nz-hsm" id="RHH-XW-069"/>
                         <outlet property="collectionView" destination="npE-58-gEv" id="Oq6-xY-sNg"/>
-                        <outlet property="contentView" destination="8bC-Xf-vdC" id="AaL-ps-yVx"/>
                         <outlet property="pageControl" destination="z6p-O3-rjW" id="J7d-oK-uL7"/>
                         <outlet property="topConstraint" destination="Un4-aO-eeP" id="RPP-YO-RHJ"/>
                         <segue destination="NwM-kg-KdE" kind="show" identifier="SettingSeque" id="Dse-mb-9HB"/>

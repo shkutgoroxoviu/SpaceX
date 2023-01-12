@@ -14,8 +14,10 @@ protocol MainPresenterProtocol {
 
 final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol?
+    
     private let networkService = NetworkService()
     private let builder = SpaceshipsCellBuilder()
+    /// Массив моделей, каждый эллемент это одна ракета
     var models: [SpaceshipCellModel] = []
     
     func viewDidLoad() {
@@ -26,8 +28,8 @@ final class MainPresenter: MainPresenterProtocol {
         networkService.loadSpaceshipsInfo { [weak self] spaceships in
             guard let self = self else { return }
             
-            let spaceships = self.builder.build(with: spaceships)
-            self.view?.setupInfoView(with: spaceships)
+            self.models = self.builder.build(with: spaceships)
+            self.view?.reloadData()
         }
     }
 }
