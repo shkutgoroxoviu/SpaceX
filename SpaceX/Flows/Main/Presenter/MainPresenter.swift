@@ -27,7 +27,7 @@ final class MainPresenter: MainPresenterProtocol {
     private func loadSpaceships() {
         networkService.loadSpaceshipsInfo { [weak self] spaceships in
             guard let self = self else { return }
-            
+            print(spaceships)
             self.models = self.builder.build(with: spaceships)
             self.view?.reloadData()
         }

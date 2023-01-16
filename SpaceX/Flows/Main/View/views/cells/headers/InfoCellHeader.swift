@@ -12,7 +12,6 @@ protocol InfoCellHeaderDelegate {
 }
 // хеддер, на котором находится название ракеты и кнопка, открывающая меню настроек параметров
 class InfoCellHeader: UITableViewHeaderFooterView {
-    
     static var reuseId = "InfoCellHeader"
     
     var delegate: InfoCellHeaderDelegate?

@@ -62,7 +62,7 @@ extension InfoCell: UITableViewDataSource, UITableViewDelegate {
     // Задаем хедер
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch models[section] {
-        case let .properies(title, _):
+        case let .properies(title, _, _):
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: InfoCellHeader.reuseId) as! InfoCellHeader
             header.config(name: title)
             let backgroundView = UIView(frame: header.bounds)
@@ -84,7 +84,14 @@ extension InfoCell: UITableViewDataSource, UITableViewDelegate {
         if section == models.count - 1 {
             let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: SpaceshipInfoFooter.reuseId) as! SpaceshipInfoFooter
             footer.delegate = footerDelegate
-//            footer.spaceshipName = 
+            // берем первый элемент массива, потому что там лежит .properties
+            switch models[0] {
+            case let .properies(title, id,  _):
+                footer.spaceshipName = title
+                footer.rocketId = id
+            default:
+                return footer
+            }
             return footer
         }
         return UITableViewHeaderFooterView()
@@ -93,7 +100,7 @@ extension InfoCell: UITableViewDataSource, UITableViewDelegate {
     // Высота хедера
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch models[section] {
-        case .properies(_, _):
+        case .properies(_, _, _):
             return 60
         case .stage(_, _):
             return 50
@@ -118,7 +125,7 @@ extension InfoCell: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch models[indexPath.section] {
-        case let .properies(_, model):
+        case let .properies(_, _, model):
             let cell = tableView.dequeueReusableCell(withIdentifier: PropertyRow.reuseId, for: indexPath) as! PropertyRow
             cell.selectionStyle = .none
             cell.config(with: model)

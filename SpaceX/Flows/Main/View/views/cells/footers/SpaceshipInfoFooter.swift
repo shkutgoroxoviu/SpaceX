@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SpaceshipInfoFooterDelegate {
-    func showLaunches()
+    func showLaunches(with name: String, with id: String)
 }
 
 /// Класс, который отвечает за нижнюю часть таблицы
@@ -18,6 +18,7 @@ class SpaceshipInfoFooter: UITableViewHeaderFooterView {
     
     var delegate: SpaceshipInfoFooterDelegate?
     var spaceshipName: String?
+    var rocketId: String?
     
     @IBOutlet weak var showLaunchesButton: UIButton!
     
@@ -32,6 +33,6 @@ class SpaceshipInfoFooter: UITableViewHeaderFooterView {
     }
     
     @IBAction func showLaunches(_ sender: Any) {
-        delegate?.showLaunches()
+        delegate?.showLaunches(with: spaceshipName ?? " ", with: rocketId ?? " ")
     }
 }

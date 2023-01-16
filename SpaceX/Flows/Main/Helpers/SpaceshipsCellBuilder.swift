@@ -26,7 +26,7 @@ struct SpaceshipsCellBuilder {
             let cell = SpaceshipCellModel(
                 spaceship: [
                     SpaceshipInfoSections.properies(
-                        title: spaceship.name,
+                        title: spaceship.name, id: spaceship.id,
                         PropertiesRowModel(
                             firsFlight: spaceship.firstFlight,
                             country: spaceship.country,

@@ -22,6 +22,9 @@ class MainViewController: UIViewController, MainViewProtocol {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
+    var currentName = " "
+    var currentId = " "
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     func reloadData() {
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
-            self?.pageControl.numberOfPages = self?.presenter?.models.count ?? 1
+            self?.pageControl.numberOfPages = self?.presenter?.models.count ?? 0
             self?.activityIndicator.stopAnimating()
         }
     }
@@ -57,6 +60,8 @@ class MainViewController: UIViewController, MainViewProtocol {
         collectionView.register(nib, forCellWithReuseIdentifier: InfoCell.reuseID)
         collectionView.dataSource = self
         collectionView.delegate = self
+        headerDelegate = self
+        footerDelegate = self
     }
     
     // листаем пейджКонтрол вместе с коллекцией
@@ -77,6 +82,7 @@ class MainViewController: UIViewController, MainViewProtocol {
         pageControl.currentPage = visiableIndex.row
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SettingSeque" {
             guard let vc = segue.destination as? SettingViewController else { return }
@@ -89,7 +95,7 @@ class MainViewController: UIViewController, MainViewProtocol {
             let destinationNavigationController = segue.destination as! UINavigationController
             let vc = destinationNavigationController.topViewController as! LaunchViewController
             
-            let presenter = LaunchPresenter()
+            let presenter = LaunchPresenter(title: currentName, rocketId: currentId)
             presenter.view = vc
             vc.presenter = presenter
         }
@@ -97,6 +103,7 @@ class MainViewController: UIViewController, MainViewProtocol {
 }
 
 extension MainViewController: InfoCellHeaderDelegate, SpaceshipInfoFooterDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.presenter?.models.count ?? 0
     }
@@ -112,20 +119,22 @@ extension MainViewController: InfoCellHeaderDelegate, SpaceshipInfoFooterDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width - 16
+        let width = collectionView.bounds.width - 8
         let height = collectionView.bounds.height - topConstraint.constant
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 13
     }
     
     func showSettings() {
         performSegue(withIdentifier: "SettingSeque", sender: nil)
     }
     
-    func showLaunches() {
+    func showLaunches(with name: String, with id: String) {
+        currentName = name
+        currentId = id
         performSegue(withIdentifier: "LaunchSegue", sender: nil)
     }
 }

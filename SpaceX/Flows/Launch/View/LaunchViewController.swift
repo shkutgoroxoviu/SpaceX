@@ -43,6 +43,7 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
         collectionView.dataSource = self
         collectionView.backgroundColor = .black
         
+        title = presenter?.title
         navigationController?.navigationBar.barStyle = .black
     }
     
@@ -63,7 +64,6 @@ extension LaunchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         guard let presenter = presenter?.models[indexPath.row] else { return cell }
         
         cell.config(presenter)
-        
         
         return cell
     }
